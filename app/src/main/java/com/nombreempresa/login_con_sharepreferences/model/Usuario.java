@@ -11,8 +11,8 @@ public class Usuario {
         this.dni=dni;
         this.apellido=apellido;
         this.nombre=nombre;
-        this.nombre=email;
-        this.nombre=password;
+        this.email=email;
+        this.password=password;
     }
     public Usuario(){}
 
@@ -21,7 +21,7 @@ public class Usuario {
         return dni;
     }
 
-    public void setDni(long dni) {
+    public void setDni(Long dni) {
         this.dni = dni;
     }
 
@@ -57,6 +57,19 @@ public class Usuario {
         this.password = password;
     }
 
+    @Override
+    public String toString(){
+        return "Usuario{" +
+                "dni = " + dni +
+                ", apellido ='"+ apellido +'\'' +
+                ", nombre ='"+ nombre +'\'' +
+                ", email ='"+ email +'\'' +
+                ", password ='"+ password +'\'' +
+                '}';
+
+
+
+    }
 }
 
 

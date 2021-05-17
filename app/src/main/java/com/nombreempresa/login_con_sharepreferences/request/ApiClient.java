@@ -8,15 +8,15 @@ import com.nombreempresa.login_con_sharepreferences.model.Usuario;
 public class ApiClient {
     private static SharedPreferences sp;
 
-    private static SharedPreferences conectar(Context contex){
+    private static SharedPreferences conectar(Context context){
         if(sp==null){
-            sp=contex.getSharedPreferences("datos",0);
+            sp=context.getSharedPreferences("datos",0);
         }
         return sp;
     }
 
-public static void guardar(Context contex, Usuario u)   {
-        SharedPreferences sp=conectar(contex);
+public static void guardar(Context context, Usuario u)   {
+        SharedPreferences sp=conectar(context);
         SharedPreferences.Editor editor=sp.edit();
         editor.putLong("dni",u.getDni());
         editor.putString("apellido", u.getApellido());
@@ -39,9 +39,9 @@ public static void guardar(Context contex, Usuario u)   {
 
         return u;
     }
-    public static Usuario login(Context contex, String mail, String pass){
+    public static Usuario login(Context context, String mail, String pass){
         Usuario u= null;
-        SharedPreferences sp=conectar(contex);
+        SharedPreferences sp=conectar(context);
         Long dni=sp.getLong("dni",-1);
         String apellido=sp.getString("apellido", "no hay dato");
         String nombre=sp.getString("nombre", "no hay dato");
@@ -53,7 +53,7 @@ public static void guardar(Context contex, Usuario u)   {
 
         }
 
-        return  u;   //if(mail== email && pass==password)
+        return  u;
 
     }
 
